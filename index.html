@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=0.3, minimum-scale=0.25, maximum-scale=3.0, user-scalable=yes">
+  <title>Wedding Invitation | Chi. La. Sow. Kiranmai Reddy & Chi. Rohith Kumar Reddy | కళ్యాణ మహోత్సవ ఆహ్వాన పత్రిక</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@600;700;900&family=Great+Vibes&family=Marcellus&family=Noto+Serif+Telugu:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GitHub Pages Open Graph & Meta Tags for WhatsApp & Social Sharing -->
+  <meta property="og:title" content="Wedding Invitation | Kiranmai & Rohith">
+  <meta property="og:description" content="Chi. La. Sow. Kiranmai Reddy weds Chi. Rohith Kumar Reddy on 29th October 2026. Join us in celebrating with your blessings.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#fcfbf7">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pearl: {
+              50: '#fcfbf7',
+              100: '#f8f4ec',
+              200: '#f1e9dc',
+              300: '#e5d7c3',
+            },
+            royalCharcoal: '#221f1c',
+            royalEspresso: '#443c35',
+            royalMuted: '#685f56',
+            royalGold: {
+              100: '#faf2da',
+              200: '#f3e2ad',
+              300: '#ebcf7b',
+              400: '#dfba4e',
+              500: '#c59a2f',
+              600: '#a77d1d',
+              700: '#856012',
+              800: '#64470b',
+            },
+            champagne: '#f5edd9',
+            sacredKumkum: '#8b262a',
+          },
+          fontFamily: {
+            cinzel: ['"Cinzel Decorative"', 'serif'],
+            telugu: ['"Noto Serif Telugu"', 'serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+            marcellus: ['"Marcellus"', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'pearl-subtle': '0 8px 30px -4px rgba(167, 125, 29, 0.06), 0 2px 10px -2px rgba(34, 31, 28, 0.03)',
+            'pearl-card': '0 16px 45px -8px rgba(167, 125, 29, 0.10), 0 6px 18px -4px rgba(34, 31, 28, 0.04)',
+            'pearl-elevated': '0 24px 60px -10px rgba(167, 125, 29, 0.14), 0 10px 24px -5px rgba(34, 31, 28, 0.05)',
+            'gold-glow': '0 0 35px rgba(223, 186, 78, 0.40)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Ultra-smooth language transition without layout shifts */
+    .lang-item {
+      display: grid;
+      grid-template-areas: "stack";
+      align-items: center;
+    }
+    .lang-en, .lang-te {
+      grid-area: stack;
+      transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1), transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: opacity, transform;
+    }
+    
+    html[data-lang="en"] .lang-en {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      visibility: visible;
+    }
+    html[data-lang="en"] .lang-te {
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    html[data-lang="te"] .lang-te {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      visibility: visible;
+    }
+    html[data-lang="te"] .lang-en {
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    /* Metallic Gold Text and Button Gradients */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #7a5813 0%, #caa137 45%, #926c19 80%, #caa137 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-gradient-bg {
+      background: linear-gradient(135deg, #caa137 0%, #a77d1d 100%);
+    }
+
+    /* Ambient Falling Jasmine & Gold Petals Canvas */
+    #petal-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 15;
+    }
+
+    /* Subtle filigree background watermark */
+    .bg-mandala {
+      background-image: radial-gradient(circle at center, rgba(197, 154, 47, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Subtle pulse animation for sacred elements */
+    @keyframes gentlePulse {
+      0%, 100% { transform: scale(1); opacity: 0.95; }
+      50% { transform: scale(1.03); opacity: 1; filter: drop-shadow(0 0 14px rgba(223, 186, 78, 0.45)); }
+    }
+    .anim-pulse-sacred {
+      animation: gentlePulse 4s ease-in-out infinite;
+    }
+
+    /* Audio Visualizer Wave Animation */
+    @keyframes waveBar {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+    .wave-bar {
+      width: 2.5px;
+      background: currentColor;
+      border-radius: 9999px;
+      display: inline-block;
+      animation: waveBar 1.2s ease-in-out infinite;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.2s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.4s; }
+    .is-paused .wave-bar {
+      animation: none !important;
+      height: 4px !important;
+    }
+  </style>
+</head>
+<body class="bg-pearl-50 text-royalCharcoal font-marcellus antialiased relative min-h-screen selection:bg-royalGold-300 selection:text-royalCharcoal bg-mandala">
+
+  <!-- =========================================================================
+       GITHUB PAGES ASSET PLACEHOLDER NOTICE:
+       Place your audio & video files in the following relative directory paths:
+       - Audio: assets/audio/wedding_music.mp3
+       - Video: assets/video/wedding_invitation.mp4
+       - Video Poster: assets/images/video_poster.jpg
+       If the MP3 is missing, the built-in Web Audio Shehnai synthesizer will 
+       seamlessly play traditional Raga Mohanam auspicious wedding music!
+       ========================================================================= -->
+
+  <!-- Background Music Audio Element with Graceful Synth Fallback -->
+  <audio id="weddingBgm" loop preload="auto">
+    <source src="assets/audio/wedding_music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Falling Petals Canvas -->
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- Ambient Light Orbs for depth -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-royalGold-200/25 blur-3xl"></div>
+    <div class="absolute top-1/3 -right-28 w-[30rem] h-[30rem] rounded-full bg-champagne/40 blur-3xl"></div>
+    <div class="absolute -bottom-24 left-1/4 w-[32rem] h-[32rem] rounded-full bg-royalGold-100/30 blur-3xl"></div>
+  </div>
+
+  <!-- FLOATING NAVIGATION BAR: Ultra-Smooth Language Switcher & Audio Coordinator -->
+  <nav class="fixed top-4 inset-x-0 mx-auto max-w-fit z-50 px-3 py-1.5 bg-white/95 backdrop-blur-md rounded-full shadow-pearl-elevated border-none flex items-center gap-2">
+    <!-- Language Toggle with Animated Sliding Pill -->
+    <div class="relative bg-pearl-100 p-1 rounded-full flex items-center shadow-inner">
+      <div id="langIndicator" class="absolute top-1 left-1 w-[80px] h-[30px] rounded-full gold-gradient-bg shadow-sm transition-all duration-300 ease-out"></div>
+      <button onclick="setLanguage('en')" id="btnEn" class="relative z-10 w-[80px] h-[30px] text-xs font-semibold rounded-full transition-colors duration-200 text-white flex items-center justify-center gap-1 font-sans">
+        <span>English</span>
+      </button>
+      <button onclick="setLanguage('te')" id="btnTe" class="relative z-10 w-[80px] h-[30px] text-xs font-semibold rounded-full transition-colors duration-200 text-royalEspresso flex items-center justify-center gap-1 font-telugu">
+        <span>తెలుగు</span>
+      </button>
+    </div>
+
+    <!-- Music Toggle Button with Audio Visualizer Bars -->
+    <button id="audioToggleBtn" onclick="toggleWeddingMusic()" title="Traditional Mangala Vadyam" class="px-3 h-[30px] rounded-full bg-pearl-100 hover:bg-champagne text-royalGold-700 flex items-center gap-2 transition active:scale-95 shadow-sm is-paused">
+      <div class="flex items-center gap-0.5 h-4">
+        <span class="wave-bar"></span>
+        <span class="wave-bar"></span>
+        <span class="wave-bar"></span>
+      </div>
+      <span id="audioBtnText" class="text-xs font-semibold font-sans">Music Off</span>
+    </button>
+  </nav>
+
+  <!-- GUEST INTERACTION BANNER (Satisfies Browser Autoplay Policy Elegantly) -->
+  <aside id="audioBanner" class="fixed bottom-4 inset-x-4 max-w-md mx-auto z-50 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-pearl-elevated flex items-center justify-between gap-3 transition-transform duration-500">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-white shrink-0 shadow-gold-glow">
+        <i data-lucide="music-2" class="w-5 h-5"></i>
+      </div>
+      <div class="lang-item">
+        <div class="lang-en text-xs">
+          <p class="font-bold text-royalCharcoal">Welcome to the Wedding Celebration!</p>
+          <p class="text-royalMuted">Tap to play traditional Mangala Vadyam</p>
+        </div>
+        <div class="lang-te text-xs font-telugu">
+          <p class="font-bold text-royalCharcoal">కళ్యాణ మహోత్సవానికి స్వాగతం!</p>
+          <p class="text-royalMuted">మంగళ వాయిద్యాల సంగీతంతో వీక్షించండి</p>
+        </div>
+      </div>
+    </div>
+    <button onclick="dismissBannerAndPlay()" class="px-3.5 py-1.5 gold-gradient-bg text-white rounded-xl text-xs font-semibold hover:opacity-95 shrink-0 transition">
+      Play
+    </button>
+  </aside>
+
+  <!-- SACRED VEDIC INVOCATION -->
+  <header class="w-full pt-20 pb-4 text-center px-4 relative z-20">
+    <div class="max-w-3xl mx-auto flex flex-col items-center">
+      <p class="text-xs sm:text-sm tracking-[0.25em] text-royalGold-700 font-cinzel font-semibold">
+        ॥ శ్రీరస్తు ॥ శుభమస్తు ॥ అవిఘ్నమస్తు ॥
+      </p>
+      
+      <div class="lang-item text-center mt-1">
+        <p class="lang-en text-xs sm:text-sm text-royalEspresso font-serif tracking-wide">
+          With the Divine Blessings of Sri Sitaramachandra Swamy & Lord Venkateswara
+        </p>
+        <p class="lang-te text-xs sm:text-sm text-royalEspresso font-telugu tracking-wide">
+          శ్రీమతే రామానుజాయ నమః • శ్రీ సీతారామచంద్రస్వామి ప్రసన్నః • శ్రీ వేంకటేశ్వర కటాక్షసిద్ధిరస్తు
+        </p>
+      </div>
+
+      <div class="flex items-center justify-center gap-3 my-3 text-royalGold-400">
+        <span class="h-[1px] w-12 bg-gradient-to-r from-transparent to-royalGold-400"></span>
+        <svg class="w-5 h-5 text-royalGold-600 anim-pulse-sacred" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C11.5 2 11 3.2 11 5C11 6.5 11.5 7.5 12 7.5C12.5 7.5 13 6.5 13 5C13 3.2 12.5 2 12 2M6 13C6 11.5 8 10 12 10C16 10 18 11.5 18 13C18 15 15.5 17 12 17C8.5 17 6 15 6 13M12 19C7 19 3 16 3 13C3 11 5 9 8 8C7 9.5 7 11 8.5 12C10 13 11 13 12 13C13 13 14 13 15.5 12C17 11 17 9.5 16 8C19 9 21 11 21 13C21 16 17 19 12 19Z"/>
+        </svg>
+        <span class="h-[1px] w-12 bg-gradient-to-l from-transparent to-royalGold-400"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-20 max-w-4xl mx-auto px-4 py-4 sm:py-8 space-y-12">
+
+    <!-- HERO CARD: GIRL'S SIDE INVITATION (BRIDE FIRST) -->
+    <section class="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-14 shadow-pearl-card text-center relative border-none">
+      
+      <!-- Auspicious Lord Ganesha Motif -->
+      <div class="mb-5 flex justify-center">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-champagne/50 flex items-center justify-center shadow-inner">
+          <svg class="w-14 h-14 text-royalGold-600 anim-pulse-sacred" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50 8 C46 20, 44 34, 44 48 C44 58, 47 68, 50 78 C53 68, 56 58, 56 48 C56 34, 54 20, 50 8 Z" fill="#b8860b"/>
+            <path d="M37 18 C32 30, 30 45, 33 58 C34 63, 38 65, 40 60 C37 48, 37 35, 41 20 Z" fill="#dfba4e"/>
+            <path d="M63 18 C68 30, 70 45, 67 58 C66 63, 62 65, 60 60 C63 48, 63 35, 59 20 Z" fill="#dfba4e"/>
+            <circle cx="50" cy="85" r="4.5" fill="#caa137"/>
+            <path d="M48 38 L52 38 L51 64 L49 64 Z" fill="#8b262a"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Top Invitation Inscription -->
+      <div class="lang-item mb-2">
+        <p class="lang-en text-xs sm:text-sm tracking-[0.22em] uppercase text-royalGold-700 font-cinzel font-semibold">
+          We Cordially Solicit Your Gracious Presence on the Auspicious Occasion of the Marriage of Our Daughter
+        </p>
+        <p class="lang-te text-xs sm:text-sm tracking-[0.2em] uppercase text-royalGold-700 font-telugu font-semibold">
+          మా కుమార్తె వివాహ మహోత్సవమునకు బంధుమిత్రులందరికీ ఇదే మా హృదయపూర్వక ఆహ్వానం
+        </p>
+      </div>
+
+      <div class="lang-item my-2">
+        <h1 class="lang-en text-3xl sm:text-5xl lg:text-6xl font-cinzel font-bold gold-gradient-text tracking-wide">
+          Wedding Invitation
+        </h1>
+        <h1 class="lang-te text-3xl sm:text-5xl lg:text-6xl font-telugu font-bold gold-gradient-text tracking-normal">
+          వివాహ మహోత్సవ ఆహ్వాన పత్రిక
+        </h1>
+      </div>
+
+      <div class="flex items-center justify-center gap-4 my-6 opacity-60">
+        <span class="h-px w-20 sm:w-28 bg-royalGold-400"></span>
+        <i data-lucide="sparkles" class="w-4 h-4 text-royalGold-500"></i>
+        <span class="h-px w-20 sm:w-28 bg-royalGold-400"></span>
+      </div>
+
+      <!-- COUPLE SPOTLIGHT (BRIDE FIRST) -->
+      <div class="my-8 space-y-6">
+
+        <!-- 1. BRIDE -->
+        <div class="bg-pearl-50/80 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto shadow-pearl-subtle hover:shadow-pearl-card transition-all duration-300">
+          <div class="lang-item mb-1">
+            <span class="lang-en text-xs uppercase tracking-widest text-royalGold-700 font-bold font-sans">Chi. La. Sow. (Bride)</span>
+            <span class="lang-te text-xs tracking-widest text-royalGold-700 font-bold font-telugu">చిరంజీవి లక్ష్మీ సౌభాగ్యవతి (వధువు)</span>
+          </div>
+
+          <div class="lang-item">
+            <h2 class="lang-en text-2xl sm:text-4xl font-playfair font-bold gold-gradient-text tracking-wide">
+              Chi. La. Sow. Kiranmai Reddy
+            </h2>
+            <h2 class="lang-te text-2xl sm:text-4xl font-telugu font-bold gold-gradient-text leading-tight">
+              చి||ల||సౌ|| కీరణ్మయి రెడ్డి
+            </h2>
+          </div>
+
+          <div class="lang-item mt-3">
+            <p class="lang-en text-sm sm:text-base text-royalEspresso font-serif leading-relaxed">
+              Daughter of <strong class="text-royalCharcoal">Sri Avuluri Srinivasa Reddy</strong> & <strong class="text-royalCharcoal">Smt. Avuluri Nagamani</strong><br>
+              <span class="text-xs sm:text-sm text-royalGold-700 font-normal">Kunavaram Road, Burgampahad Mandal, Bhadradri Kothagudem Dist.</span>
+            </p>
+            <p class="lang-te text-sm sm:text-base text-royalEspresso font-telugu leading-relaxed">
+              <strong class="text-royalCharcoal">శ్రీమతి అవులూరి నాగమణి</strong> & <strong class="text-royalCharcoal">శ్రీ శ్రీనివాసరెడ్డి</strong> గార్ల ప్రథమ కుమార్తె<br>
+              <span class="text-xs sm:text-sm text-royalGold-700 font-normal">కూనవరం రోడ్, బూర్గంపహాడ్ మండలం, భద్రాద్రి కొత్తగూడెం జిల్లా.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Auspicious Weds Emblem -->
+        <div class="flex flex-col items-center justify-center my-2">
+          <div class="lang-item">
+            <span class="lang-en font-script text-3xl sm:text-4xl text-royalGold-600 font-bold">weds</span>
+            <span class="lang-te font-telugu text-xl sm:text-2xl text-royalGold-600 font-bold">తో పరిణయం</span>
+          </div>
+        </div>
+
+        <!-- 2. GROOM -->
+        <div class="bg-pearl-50/80 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto shadow-pearl-subtle hover:shadow-pearl-card transition-all duration-300">
+          <div class="lang-item mb-1">
+            <span class="lang-en text-xs uppercase tracking-widest text-royalGold-700 font-bold font-sans">Chi. (Groom)</span>
+            <span class="lang-te text-xs tracking-widest text-royalGold-700 font-bold font-telugu">చిరంజీవి (వరుడు)</span>
+          </div>
+
+          <div class="lang-item">
+            <h2 class="lang-en text-2xl sm:text-4xl font-playfair font-bold gold-gradient-text tracking-wide">
+              Chi. Rohith Kumar Reddy
+            </h2>
+            <h2 class="lang-te text-2xl sm:text-4xl font-telugu font-bold gold-gradient-text leading-tight">
+              చి|| రోహిత్ కుమార్ రెడ్డి
+            </h2>
+          </div>
+
+          <div class="lang-item mt-3">
+            <p class="lang-en text-sm sm:text-base text-royalEspresso font-serif leading-relaxed">
+              Eldest Son of <strong class="text-royalCharcoal">Late Sri Karne Narayana Reddy</strong> & <strong class="text-royalCharcoal">Smt. Dhanalaxmi</strong><br>
+              <span class="text-xs sm:text-sm text-royalGold-700 font-normal">Resident of Huzurnagar, Suryapet District</span>
+            </p>
+            <p class="lang-te text-sm sm:text-base text-royalEspresso font-telugu leading-relaxed">
+              సూర్యాపేట జిల్లా, హుజూర్‌నగర్ వాస్తవ్యులు <strong class="text-royalCharcoal">స్వర్గీయ కర్నె నారాయణరెడ్డి</strong> & <strong class="text-royalCharcoal">శ్రీమతి ధనలక్ష్మి</strong> దంపతుల జ్యేష్ఠ కుమారుడు
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sacred Mangalashtakam Shloka -->
+      <div class="max-w-xl mx-auto my-6 py-4 px-6 bg-champagne/40 rounded-xl text-royalCharcoal italic text-sm sm:text-base leading-relaxed">
+        <p class="font-telugu text-royalGold-800">
+          "మాంగల్య తంతునానేన లోకరక్షణ హేతునా | కంఠే బధ్నామి సుభగే సంజీవ శరదశ్శతమ్ ||"
+        </p>
+      </div>
+
+      <!-- Live Sumuhurtham Countdown -->
+      <div class="mt-8 pt-6 border-t border-royalGold-200/50">
+        <div class="lang-item mb-4">
+          <h4 class="lang-en text-xs sm:text-sm tracking-widest uppercase text-royalGold-700 font-cinzel font-semibold">
+            Auspicious Sumuhurtham Countdown
+          </h4>
+          <h4 class="lang-te text-xs sm:text-sm tracking-wider uppercase text-royalGold-700 font-telugu font-semibold">
+            శుభ ముహూర్త సమయ కౌంట్‌డౌన్
+          </h4>
+        </div>
+
+        <div id="countdown" class="grid grid-cols-4 gap-2 sm:gap-4 max-w-lg mx-auto">
+          <div class="bg-white rounded-2xl p-3 sm:p-4 text-center shadow-pearl-subtle">
+            <span id="cd-days" class="text-xl sm:text-3xl font-bold font-playfair text-royalGold-600">00</span>
+            <div class="lang-item mt-1">
+              <span class="lang-en text-[10px] sm:text-xs uppercase tracking-wider text-royalMuted font-sans">Days</span>
+              <span class="lang-te text-[10px] sm:text-xs text-royalMuted font-telugu">రోజులు</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-4 text-center shadow-pearl-subtle">
+            <span id="cd-hours" class="text-xl sm:text-3xl font-bold font-playfair text-royalGold-600">00</span>
+            <div class="lang-item mt-1">
+              <span class="lang-en text-[10px] sm:text-xs uppercase tracking-wider text-royalMuted font-sans">Hours</span>
+              <span class="lang-te text-[10px] sm:text-xs text-royalMuted font-telugu">గంటలు</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-4 text-center shadow-pearl-subtle">
+            <span id="cd-minutes" class="text-xl sm:text-3xl font-bold font-playfair text-royalGold-600">00</span>
+            <div class="lang-item mt-1">
+              <span class="lang-en text-[10px] sm:text-xs uppercase tracking-wider text-royalMuted font-sans">Minutes</span>
+              <span class="lang-te text-[10px] sm:text-xs text-royalMuted font-telugu">నిమిషాలు</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-4 text-center shadow-pearl-subtle">
+            <span id="cd-seconds" class="text-xl sm:text-3xl font-bold font-playfair text-royalGold-600">00</span>
+            <div class="lang-item mt-1">
+              <span class="lang-en text-[10px] sm:text-xs uppercase tracking-wider text-royalMuted font-sans">Seconds</span>
+              <span class="lang-te text-[10px] sm:text-xs text-royalMuted font-telugu">సెకన్లు</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 16:9 CINEMATIC INVITATION VIDEO PLAYER WITH SMART AUDIO DUCKING -->
+    <section class="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-10 shadow-pearl-card">
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-champagne text-royalGold-800 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">
+          <i data-lucide="video" class="w-3.5 h-3.5 text-royalGold-600"></i>
+          <div class="lang-item">
+            <span class="lang-en font-sans">Cinematic Invitation Video</span>
+            <span class="lang-te font-telugu">ప్రత్యేక వీడియో ఆహ్వానం</span>
+          </div>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-cinzel font-bold text-royalGold-800">
+          Kiranmai & Rohith
+        </h2>
+
+        <div class="lang-item mt-1">
+          <p class="lang-en text-xs sm:text-sm text-royalMuted font-serif">
+            Watch our special invitation video (Website background audio ducks automatically when video plays)
+          </p>
+          <p class="lang-te text-xs sm:text-sm text-royalMuted font-telugu">
+            మధుర జ్ఞాపకాల వివాహ దృశ్య ఆహ్వానం (వీడియో ప్రారంభమైనప్పుడు వెబ్‌సైట్ సంగీతం స్వయంచాలకంగా తగ్గుతుంది)
+          </p>
+        </div>
+      </div>
+
+      <!-- 16:9 Responsive Video Container -->
+      <div id="videoContainer" class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black max-w-3xl mx-auto group">
+        
+        <!-- Native Video Element pointing to GitHub assets/video/ placeholder with fallback -->
+        <video id="invitationVideo" loop playsinline preload="metadata" 
+          poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='720' viewBox='0 0 1280 720'><rect width='100%25' height='100%25' fill='%23221f1c'/><circle cx='640' cy='360' r='120' fill='%23c59a2f' opacity='0.15'/><text x='50%25' y='48%25' dominant-baseline='middle' text-anchor='middle' fill='%23ebcf7b' font-family='serif' font-size='38' letter-spacing='3'>Kiranmai %26 Rohith</text><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' opacity='0.8' font-family='sans-serif' font-size='18'>Click to Play Wedding Teaser</text></svg>"
+          class="w-full h-full object-cover">
+          <source src="assets/video/wedding_invitation.mp4" type="video/mp4">
+          <!-- Sample public backup source in case local asset is yet to be pushed to repo -->
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+
+        <!-- YouTube / Vimeo Iframe Fallback -->
+        <iframe id="videoIframe" class="hidden w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <!-- Big Play Button Overlay -->
+        <div id="videoOverlay" onclick="togglePlayPauseVideo()" class="absolute inset-0 bg-black/35 flex flex-col items-center justify-center cursor-pointer transition-opacity duration-300">
+          <button id="overlayPlayBtn" aria-label="Play Video" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full gold-gradient-bg text-white flex items-center justify-center shadow-gold-glow hover:scale-105 transition transform">
+            <i id="overlayPlayIcon" data-lucide="play" class="w-8 h-8 fill-white ml-1"></i>
+          </button>
+          
+          <div class="lang-item mt-3">
+            <span class="lang-en text-white text-xs sm:text-sm font-semibold tracking-wider bg-black/50 px-3.5 py-1.5 rounded-full backdrop-blur-sm font-sans">
+              Tap to Play Wedding Video
+            </span>
+            <span class="lang-te text-white text-xs sm:text-sm font-semibold tracking-wide bg-black/50 px-3.5 py-1.5 rounded-full backdrop-blur-sm font-telugu">
+              వీడియో ఆహ్వానాన్ని ప్లే చేయండి
+            </span>
+          </div>
+        </div>
+
+        <!-- Custom Video Controls Bar -->
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent p-3 sm:p-4 flex items-center justify-between text-white z-20">
+          <div class="flex items-center gap-3">
+            <button onclick="togglePlayPauseVideo()" class="p-1 hover:text-royalGold-300 transition" title="Play/Pause">
+              <i id="bottomPlayIcon" data-lucide="play" class="w-5 h-5"></i>
+            </button>
+            <button onclick="toggleVideoAudioMute()" class="p-1 hover:text-royalGold-300 transition" title="Mute/Unmute">
+              <i id="videoVolumeIcon" data-lucide="volume-2" class="w-5 h-5"></i>
+            </button>
+            <span id="videoTime" class="text-xs font-mono opacity-80">0:00</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="openVideoLinkModal()" class="px-2.5 py-1 rounded-lg bg-white/20 hover:bg-white/30 text-xs font-sans font-medium flex items-center gap-1.5 transition">
+              <i data-lucide="folder-code" class="w-3.5 h-3.5"></i>
+              <div class="lang-item">
+                <span class="lang-en font-sans">Change Video</span>
+                <span class="lang-te font-telugu">వీడియో మార్చండి</span>
+              </div>
+            </button>
+            <button onclick="toggleFullScreenVideo()" class="p-1 hover:text-royalGold-300 transition" title="Fullscreen">
+              <i data-lucide="maximize" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Change Video Modal (For YouTube Links or GitHub instructions) -->
+      <div id="videoModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl text-left">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-cinzel font-bold text-royalGold-800">Wedding Video Source</h3>
+            <button onclick="closeVideoLinkModal()" class="p-1 text-royalEspresso hover:text-royalCharcoal"><i data-lucide="x" class="w-5 h-5"></i></button>
+          </div>
+          <p class="text-xs text-royalEspresso mb-3 leading-relaxed font-sans">
+            Paste a <strong>YouTube URL</strong> (or YouTube Shorts link), an external MP4 URL, or note that on GitHub Pages you can place your video file at <code>assets/video/wedding_invitation.mp4</code>.
+          </p>
+          <input type="url" id="customVideoInput" placeholder="https://www.youtube.com/watch?v=... or https://youtu.be/..." class="w-full border border-royalGold-300 rounded-xl p-3 text-xs text-royalCharcoal focus:outline-none focus:ring-2 focus:ring-royalGold-500 mb-4">
+          <div class="flex justify-end gap-2">
+            <button onclick="closeVideoLinkModal()" class="px-3.5 py-2 text-xs text-royalEspresso hover:bg-pearl-100 rounded-xl">Cancel</button>
+            <button onclick="applyCustomVideoLink()" class="px-4 py-2 text-xs gold-gradient-bg text-white font-semibold rounded-xl hover:opacity-95 transition">Apply & Play</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CEREMONY ITINERARY CARDS: SUMUHURTHAM & RECEPTION -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- 1. SUMUHURTHAM CARD -->
+      <article class="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-pearl-card flex flex-col justify-between hover:-translate-y-1 transition duration-300 border-none">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-champagne text-royalGold-800 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-royalGold-600"></i>
+            <div class="lang-item">
+              <span class="lang-en font-sans">Kalyana Mahotsavam</span>
+              <span class="lang-te font-telugu">కల్యాణ మహోత్సవం</span>
+            </div>
+          </div>
+
+          <div class="lang-item mb-1">
+            <h2 class="lang-en text-2xl sm:text-3xl font-cinzel font-bold text-royalGold-800">
+              Sumuhurtham
+            </h2>
+            <h2 class="lang-te text-2xl sm:text-3xl font-telugu font-bold text-royalGold-800">
+              శుభ ముహూర్తం
+            </h2>
+          </div>
+
+          <div class="space-y-4 my-6 text-sm sm:text-base">
+            <!-- Date & Time -->
+            <div class="flex items-start gap-3.5">
+              <div class="p-2.5 bg-champagne/60 rounded-xl text-royalGold-700 shrink-0">
+                <i data-lucide="calendar" class="w-5 h-5"></i>
+              </div>
+              <div class="lang-item">
+                <div class="lang-en">
+                  <p class="font-bold text-royalCharcoal">Thursday, 29th October 2026</p>
+                  <p class="text-xs sm:text-sm text-royalGold-700 font-serif mt-0.5">
+                    At 11:03 AM (Rohini Nakshatram – Dhanussu Lagnam)
+                  </p>
+                </div>
+                <div class="lang-te">
+                  <p class="font-bold text-royalCharcoal font-telugu">29-10-2026 గురువారం</p>
+                  <p class="text-xs sm:text-sm text-royalGold-700 font-telugu mt-0.5 leading-relaxed">
+                    ఉదయం గం॥ 11:03 నిమిషాలకు (రోహిణీ నక్షత్ర యుక్త - ధనూస్సు లగ్న పుష్కరాంశ సుముహూర్తమున)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Venue -->
+            <div class="flex items-start gap-3.5">
+              <div class="p-2.5 bg-champagne/60 rounded-xl text-royalGold-700 shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div class="lang-item">
+                <div class="lang-en">
+                  <p class="font-bold text-royalCharcoal">SwarnaVedika Function Hall</p>
+                  <p class="text-xs sm:text-sm text-royalMuted mt-0.5">Huzurnagar, Suryapet District, Telangana</p>
+                </div>
+                <div class="lang-te font-telugu">
+                  <p class="font-bold text-royalCharcoal">శ్రీ స్వర్ణ వేదిక ఫంక్షన్ హాల్</p>
+                  <p class="text-xs sm:text-sm text-royalMuted mt-0.5">హుజూర్‌నగర్, సూర్యాపేట జిల్లా, తెలంగాణ</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Links -->
+        <div class="mt-6 pt-5 border-t border-royalGold-200/50 flex flex-wrap gap-2.5">
+          <a href="https://www.google.com/maps/search/?api=1&query=SwarnaVedika+Function+Hall+Huzurnagar" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[130px] flex items-center justify-center gap-1.5 px-3 py-2.5 bg-pearl-100 hover:bg-champagne text-royalGold-800 rounded-xl text-xs font-semibold transition shadow-sm">
+            <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+            <div class="lang-item">
+              <span class="lang-en font-sans">Directions</span>
+              <span class="lang-te font-telugu">రూట్ మ్యాప్</span>
+            </div>
+          </a>
+          <button onclick="downloadCalendarInvite('wedding')" class="flex-1 min-w-[130px] flex items-center justify-center gap-1.5 px-3 py-2.5 gold-gradient-bg hover:opacity-95 text-white rounded-xl text-xs font-semibold transition shadow-sm">
+            <i data-lucide="calendar-plus" class="w-3.5 h-3.5"></i>
+            <div class="lang-item">
+              <span class="lang-en font-sans">Add to Calendar</span>
+              <span class="lang-te font-telugu">క్యాలెండర్</span>
+            </div>
+          </button>
+        </div>
+      </article>
+
+      <!-- 2. RECEPTION & LUNCH CARD -->
+      <article class="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-pearl-card flex flex-col justify-between hover:-translate-y-1 transition duration-300 border-none">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-champagne text-royalGold-800 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="utensils" class="w-3.5 h-3.5 text-royalGold-600"></i>
+            <div class="lang-item">
+              <span class="lang-en font-sans">Celebratory Feast</span>
+              <span class="lang-te font-telugu">రిసెప్షన్ & విందు</span>
+            </div>
+          </div>
+
+          <div class="lang-item mb-1">
+            <h2 class="lang-en text-2xl sm:text-3xl font-cinzel font-bold text-royalGold-800">
+              Reception & Lunch
+            </h2>
+            <h2 class="lang-te text-2xl sm:text-3xl font-telugu font-bold text-royalGold-800">
+              స్నేహ విందు
+            </h2>
+          </div>
+
+          <div class="space-y-4 my-6 text-sm sm:text-base">
+            <!-- Date & Time -->
+            <div class="flex items-start gap-3.5">
+              <div class="p-2.5 bg-champagne/60 rounded-xl text-royalGold-700 shrink-0">
+                <i data-lucide="calendar" class="w-5 h-5"></i>
+              </div>
+              <div class="lang-item">
+                <div class="lang-en">
+                  <p class="font-bold text-royalCharcoal">Sunday, 01st November 2026</p>
+                  <p class="text-xs sm:text-sm text-royalGold-700 font-serif mt-0.5">
+                    From 11:00 AM Onwards
+                  </p>
+                </div>
+                <div class="lang-te">
+                  <p class="font-bold text-royalCharcoal font-telugu">01-11-2026 ఆదివారం</p>
+                  <p class="text-xs sm:text-sm text-royalGold-700 font-telugu mt-0.5">
+                    ఉదయం 11:00 గంటల నుండి
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Venue -->
+            <div class="flex items-start gap-3.5">
+              <div class="p-2.5 bg-champagne/60 rounded-xl text-royalGold-700 shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div class="lang-item">
+                <div class="lang-en">
+                  <p class="font-bold text-royalCharcoal">Veerabhadra Function Hall</p>
+                  <p class="text-xs sm:text-sm text-royalMuted mt-0.5">Kunavaram Road, Bhadrachalam, Telangana</p>
+                </div>
+                <div class="lang-te font-telugu">
+                  <p class="font-bold text-royalCharcoal">వీరభద్ర ఫంక్షన్ హాల్</p>
+                  <p class="text-xs sm:text-sm text-royalMuted mt-0.5">కూనవరం రోడ్, భద్రాచలం, తెలంగాణ</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Links -->
+        <div class="mt-6 pt-5 border-t border-royalGold-200/50 flex flex-wrap gap-2.5">
+          <a href="https://www.google.com/maps/search/?api=1&query=Veerabhadra+Function+Hall+Kunavaram+Road+Bhadrachalam" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[130px] flex items-center justify-center gap-1.5 px-3 py-2.5 bg-pearl-100 hover:bg-champagne text-royalGold-800 rounded-xl text-xs font-semibold transition shadow-sm">
+            <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+            <div class="lang-item">
+              <span class="lang-en font-sans">Directions</span>
+              <span class="lang-te font-telugu">రూట్ మ్యాప్</span>
+            </div>
+          </a>
+          <button onclick="downloadCalendarInvite('reception')" class="flex-1 min-w-[130px] flex items-center justify-center gap-1.5 px-3 py-2.5 gold-gradient-bg hover:opacity-95 text-white rounded-xl text-xs font-semibold transition shadow-sm">
+            <i data-lucide="calendar-plus" class="w-3.5 h-3.5"></i>
+            <div class="lang-item">
+              <span class="lang-en font-sans">Add to Calendar</span>
+              <span class="lang-te font-telugu">క్యాలెండర్</span>
+            </div>
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- HOST DETAILS (BRIDE'S FAMILY) & INTERACTIVE BLESSINGS GUESTBOOK -->
+    <section class="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-10 shadow-pearl-card">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        
+        <!-- Host Information (Girl's Side) -->
+        <div>
+          <div class="lang-item mb-1">
+            <p class="lang-en text-xs uppercase tracking-widest text-royalGold-700 font-cinzel font-semibold">
+              Cordially Invited By
+            </p>
+            <p class="lang-te text-xs uppercase tracking-widest text-royalGold-700 font-telugu font-semibold">
+              ప్రేమతో ఆహ్వానించువారు
+            </p>
+          </div>
+
+          <div class="lang-item mb-4">
+            <h3 class="lang-en text-xl sm:text-2xl font-bold font-playfair text-royalCharcoal">
+              Hosts & Family
+            </h3>
+            <h3 class="lang-te text-xl sm:text-2xl font-bold font-telugu text-royalCharcoal">
+              ఆహ్వానించువారు:
+            </h3>
+          </div>
+
+          <div class="space-y-3 font-telugu text-sm sm:text-base text-royalEspresso">
+            <p class="font-bold text-lg text-royalGold-800">
+              శ్రీమతి & శ్రీ అవులూరి నాగమణి – శ్రీనివాసరెడ్డి
+            </p>
+            <p class="text-sm font-marcellus text-royalCharcoal">
+              Avuluri Nagamani & Srinivasa Reddy
+            </p>
+            <p class="text-xs sm:text-sm text-royalMuted">
+              కూనవరం రోడ్, బూర్గంపహాడ్ మండలం, భద్రాద్రి కొత్తగూడెం జిల్లా.
+            </p>
+
+            <div class="lang-item pt-2">
+              <p class="lang-en text-xs text-royalGold-700 font-serif italic">
+                With Best Compliments From: Near & Dear, Relatives & Friends
+              </p>
+              <p class="lang-te text-xs text-royalGold-700 font-telugu">
+                భవదీయులు: బంధువులు మరియు మిత్రులు
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Dial / WhatsApp Contact Buttons -->
+          <div class="mt-6">
+            <div class="lang-item mb-2">
+              <p class="lang-en text-xs uppercase tracking-wider text-royalGold-700 font-bold font-sans">
+                For Assistance & Enquiries:
+              </p>
+              <p class="lang-te text-xs uppercase tracking-wider text-royalGold-700 font-bold font-telugu">
+                వివరములకు సంప్రదించవలసిన ఫోన్ నంబర్లు:
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <a href="tel:+919951190800" class="inline-flex items-center gap-2 px-3.5 py-2 bg-pearl-100 hover:bg-champagne rounded-xl text-xs sm:text-sm font-semibold text-royalCharcoal transition shadow-sm font-sans">
+                <i data-lucide="phone-call" class="w-4 h-4 text-royalGold-600"></i>
+                <span>9951190800</span>
+              </a>
+              <a href="https://wa.me/917207470677" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 bg-pearl-100 hover:bg-champagne rounded-xl text-xs sm:text-sm font-semibold text-royalCharcoal transition shadow-sm font-sans">
+                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+                <span>7207470677</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive RSVP / Blessings Guestbook -->
+        <div class="bg-pearl-50/80 p-5 sm:p-7 rounded-2xl shadow-pearl-subtle">
+          <div class="lang-item mb-1">
+            <h4 class="lang-en text-lg font-cinzel font-bold text-royalGold-800">
+              Send Blessings to Kiranmai & Rohith
+            </h4>
+            <h4 class="lang-te text-lg font-telugu font-bold text-royalGold-800">
+              కీరణ్మయి & రోహిత్ లకు శుభాకాంక్షలు
+            </h4>
+          </div>
+
+          <div class="lang-item mb-4">
+            <p class="lang-en text-xs text-royalMuted font-serif">
+              Share your prayers and heartfelt wishes with the couple
+            </p>
+            <p class="lang-te text-xs text-royalMuted font-telugu">
+              నూతన వధూవరులకు మీ హృదయపూర్వక ఆశీస్సులు తెలపండి
+            </p>
+          </div>
+
+          <form id="wishesForm" onsubmit="handleSendBlessing(event)" class="space-y-3">
+            <div>
+              <div class="lang-item mb-1">
+                <label for="guestName" class="lang-en block text-xs uppercase tracking-wider text-royalGold-700 font-bold font-sans">Your Name</label>
+                <label for="guestName" class="lang-te block text-xs tracking-wider text-royalGold-700 font-bold font-telugu">మీ పేరు</label>
+              </div>
+              <input type="text" id="guestName" required placeholder="e.g. Ramesh Varma" class="w-full bg-white border-none rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-royalCharcoal focus:outline-none focus:ring-2 focus:ring-royalGold-500 shadow-inner">
+            </div>
+
+            <div>
+              <div class="lang-item mb-1">
+                <label for="guestMessage" class="lang-en block text-xs uppercase tracking-wider text-royalGold-700 font-bold font-sans">Blessings & Wishes</label>
+                <label for="guestMessage" class="lang-te block text-xs tracking-wider text-royalGold-700 font-bold font-telugu">మీ ఆశీర్వాదాలు / శుభాకాంక్షలు</label>
+              </div>
+              <textarea id="guestMessage" rows="3" required placeholder="Wishing Kiranmai & Rohith eternal love, peace, and prosperity..." class="w-full bg-white border-none rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-royalCharcoal focus:outline-none focus:ring-2 focus:ring-royalGold-500 shadow-inner"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-2.5 px-4 gold-gradient-bg hover:opacity-95 text-white font-bold rounded-xl text-xs sm:text-sm transition shadow-sm flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <div class="lang-item">
+                <span class="lang-en font-sans">Send Blessings</span>
+                <span class="lang-te font-telugu">శుభాకాంక్షలు పంపండి</span>
+              </div>
+            </button>
+          </form>
+
+          <!-- Dynamic Wishes Feed -->
+          <div id="wishesDisplayArea" class="mt-4 pt-3 border-t border-royalGold-200/50 max-h-48 overflow-y-auto space-y-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-white shadow-sm">
+              <strong class="text-royalGold-700">Avuluri & Karne Families:</strong>
+              <p class="text-royalEspresso mt-0.5">హృదయపూర్వక వివాహ శుభాకాంక్షలు! May Lord Venkateswara shower divine harmony and eternal happiness on Kiranmai & Rohith.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Elegant Footer -->
+    <footer class="text-center py-8 text-xs text-royalEspresso space-y-2">
+      <div class="flex items-center justify-center gap-3 text-royalGold-400 mb-2">
+        <span class="h-px w-16 bg-royalGold-300"></span>
+        <i data-lucide="heart" class="w-4 h-4 fill-royalGold-400"></i>
+        <span class="h-px w-16 bg-royalGold-300"></span>
+      </div>
+      <p class="font-cinzel tracking-widest text-royalGold-700 font-semibold">॥ సర్వేజనాః సుఖినోభవంతు ॥</p>
+      <p class="font-serif">Chi. La. Sow. Kiranmai Reddy & Chi. Rohith Kumar Reddy • 2026</p>
+    </footer>
+
+  </main>
+
+  <!-- JAVASCRIPT LOGIC & AUDIO-VIDEO COORDINATOR -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    /* ==========================================================
+       1. ULTRA-SMOOTH LANGUAGE TRANSITION (ENGLISH & TELUGU)
+       ========================================================== */
+    function setLanguage(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+
+      const indicator = document.getElementById('langIndicator');
+      const btnEn = document.getElementById('btnEn');
+      const btnTe = document.getElementById('btnTe');
+
+      if (lang === 'en') {
+        indicator.style.transform = 'translateX(0px)';
+        btnEn.classList.add('text-white');
+        btnEn.classList.remove('text-royalEspresso');
+        btnTe.classList.remove('text-white');
+        btnTe.classList.add('text-royalEspresso');
+      } else {
+        indicator.style.transform = 'translateX(80px)';
+        btnTe.classList.add('text-white');
+        btnTe.classList.remove('text-royalEspresso');
+        btnEn.classList.remove('text-white');
+        btnEn.classList.add('text-royalEspresso');
+      }
+    }
+    setLanguage('en');
+
+    /* ==========================================================
+       2. SMART AUDIO COORDINATOR (AUTOPLAY, DUCKING, SYNTH FALLBACK)
+       ========================================================== */
+    const bgmAudio = document.getElementById('weddingBgm');
+    const audioToggleBtn = document.getElementById('audioToggleBtn');
+    const audioBtnText = document.getElementById('audioBtnText');
+    const audioBanner = document.getElementById('audioBanner');
+
+    let isAudioPlaying = false;
+    let isDucked = false;
+    let userHasInteracted = false;
+    let synthAudioCtx = null;
+    let synthInterval = null;
+    let usingSynthFallback = false;
+
+    // Carnatic Raga Mohanam auspicious notes (Sa Ri Ga Pa Dha Sa')
+    const mohanamFreqs = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
+
+    function playShehnaiSynthNote(freq, dur, targetVol = 0.045) {
+      if (!synthAudioCtx) return;
+      try {
+        const osc = synthAudioCtx.createOscillator();
+        const gain = synthAudioCtx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, synthAudioCtx.currentTime);
+
+        const currentVol = isDucked ? targetVol * 0.1 : targetVol;
+        gain.gain.setValueAtTime(0.001, synthAudioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(currentVol, synthAudioCtx.currentTime + 0.09);
+        gain.gain.exponentialRampToValueAtTime(0.0001, synthAudioCtx.currentTime + dur);
+
+        osc.connect(gain);
+        gain.connect(synthAudioCtx.destination);
+
+        osc.start();
+        osc.stop(synthAudioCtx.currentTime + dur);
+      } catch (e) {
+        console.error("Synth note error:", e);
+      }
+    }
+
+    function startSynthMelody() {
+      if (!synthAudioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        synthAudioCtx = new AudioContext();
+      }
+      if (synthAudioCtx.state === 'suspended') {
+        synthAudioCtx.resume();
+      }
+
+      usingSynthFallback = true;
+      let step = 0;
+      clearInterval(synthInterval);
+      synthInterval = setInterval(() => {
+        if (!isAudioPlaying) return;
+        const idx = (step * 2) % mohanamFreqs.length;
+        playShehnaiSynthNote(mohanamFreqs[idx], 1.1);
+        if (step % 2 === 0) {
+          playShehnaiSynthNote(mohanamFreqs[(idx + 2) % mohanamFreqs.length], 0.7);
+        }
+        step++;
+      }, 950);
+    }
+
+    function stopSynthMelody() {
+      clearInterval(synthInterval);
+      usingSynthFallback = false;
+    }
+
+    // Try starting MP3 or fall back smoothly to Web Audio synthesizer
+    function startWeddingAudio() {
+      bgmAudio.volume = isDucked ? 0.1 : 0.75;
+      const playPromise = bgmAudio.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          isAudioPlaying = true;
+          updateAudioUI(true);
+          dismissAudioBanner();
+        }).catch(() => {
+          // If MP3 file is not found (404 on fresh repo) or autoplay blocked, run Shehnai synth
+          startSynthMelody();
+          isAudioPlaying = true;
+          updateAudioUI(true);
+        });
+      }
+    }
+
+    function pauseWeddingAudio() {
+      isAudioPlaying = false;
+      bgmAudio.pause();
+      stopSynthMelody();
+      updateAudioUI(false);
+    }
+
+    function toggleWeddingMusic() {
+      if (isAudioPlaying) {
+        pauseWeddingAudio();
+      } else {
+        startWeddingAudio();
+      }
+    }
+
+    function updateAudioUI(playing) {
+      if (playing) {
+        audioToggleBtn.classList.remove('is-paused');
+        audioToggleBtn.classList.add('bg-royalGold-500', 'text-white');
+        audioToggleBtn.classList.remove('bg-pearl-100', 'text-royalGold-700');
+        audioBtnText.innerText = "Music On";
+      } else {
+        audioToggleBtn.classList.add('is-paused');
+        audioToggleBtn.classList.remove('bg-royalGold-500', 'text-white');
+        audioToggleBtn.classList.add('bg-pearl-100', 'text-royalGold-700');
+        audioBtnText.innerText = "Music Off";
+      }
+    }
+
+    function dismissAudioBanner() {
+      if (audioBanner) {
+        audioBanner.classList.add('translate-y-28', 'opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function dismissBannerAndPlay() {
+      dismissAudioBanner();
+      startWeddingAudio();
+    }
+
+    // Automatic trigger on very first gesture anywhere on page
+    function handleFirstUserGesture() {
+      if (userHasInteracted) return;
+      userHasInteracted = true;
+      startWeddingAudio();
+      window.removeEventListener('click', handleFirstUserGesture);
+      window.removeEventListener('touchstart', handleFirstUserGesture);
+      window.removeEventListener('scroll', handleFirstUserGesture);
+    }
+    window.addEventListener('click', handleFirstUserGesture, { passive: true });
+    window.addEventListener('touchstart', handleFirstUserGesture, { passive: true });
+    window.addEventListener('scroll', handleFirstUserGesture, { passive: true, once: true });
+
+    // Handle initial load autoplay attempt
+    window.addEventListener('DOMContentLoaded', () => {
+      const initialAttempt = bgmAudio.play();
+      if (initialAttempt !== undefined) {
+        initialAttempt.then(() => {
+          isAudioPlaying = true;
+          updateAudioUI(true);
+          dismissAudioBanner();
+        }).catch(() => {
+          // Autoplay blocked by browser policy; wait for first interaction or banner click
+        });
+      }
+    });
+
+    /* ==========================================================
+       3. AUDIO DUCKING WHEN 16:9 VIDEO IS PLAYING
+       ========================================================== */
+    function duckBackgroundAudio() {
+      isDucked = true;
+      fadeAudioVolume(bgmAudio, 0.08, 400);
+    }
+
+    function unduckBackgroundAudio() {
+      isDucked = false;
+      fadeAudioVolume(bgmAudio, 0.75, 450);
+    }
+
+    function fadeAudioVolume(audioElement, targetVol, durationMs) {
+      const startVol = audioElement.volume;
+      const stepTime = 30;
+      const steps = durationMs / stepTime;
+      const volChange = (targetVol - startVol) / steps;
+      let currentStep = 0;
+
+      const fadeInterval = setInterval(() => {
+        currentStep++;
+        let newVol = audioElement.volume + volChange;
+        if (newVol < 0) newVol = 0;
+        if (newVol > 1) newVol = 1;
+        audioElement.volume = newVol;
+
+        if (currentStep >= steps) {
+          audioElement.volume = targetVol;
+          clearInterval(fadeInterval);
+        }
+      }, stepTime);
+    }
+
+    /* ==========================================================
+       4. 16:9 VIDEO PLAYER CONTROLS & GITHUB REPO INTEGRATION
+       ========================================================== */
+    const invitationVideo = document.getElementById('invitationVideo');
+    const videoIframe = document.getElementById('videoIframe');
+    const videoOverlay = document.getElementById('videoOverlay');
+    const bottomPlayIcon = document.getElementById('bottomPlayIcon');
+    const overlayPlayIcon = document.getElementById('overlayPlayIcon');
+    const videoVolumeIcon = document.getElementById('videoVolumeIcon');
+    const videoTimeDisplay = document.getElementById('videoTime');
+
+    function togglePlayPauseVideo() {
+      if (!videoIframe.classList.contains('hidden')) {
+        videoOverlay.classList.add('opacity-0', 'pointer-events-none');
+        return;
+      }
+
+      if (invitationVideo.paused) {
+        invitationVideo.play();
+        videoOverlay.classList.add('opacity-0', 'pointer-events-none');
+        bottomPlayIcon.setAttribute('data-lucide', 'pause');
+        overlayPlayIcon.setAttribute('data-lucide', 'pause');
+        duckBackgroundAudio();
+      } else {
+        invitationVideo.pause();
+        videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        bottomPlayIcon.setAttribute('data-lucide', 'play');
+        overlayPlayIcon.setAttribute('data-lucide', 'play');
+        unduckBackgroundAudio();
+      }
+      lucide.createIcons();
+    }
+
+    // Video Audio Ducking Event Listeners
+    invitationVideo.addEventListener('play', duckBackgroundAudio);
+    invitationVideo.addEventListener('pause', unduckBackgroundAudio);
+    invitationVideo.addEventListener('ended', () => {
+      videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      bottomPlayIcon.setAttribute('data-lucide', 'play');
+      unduckBackgroundAudio();
+      lucide.createIcons();
+    });
+
+    invitationVideo.addEventListener('timeupdate', () => {
+      const cur = formatTime(invitationVideo.currentTime);
+      const dur = formatTime(invitationVideo.duration || 0);
+      videoTimeDisplay.innerText = `${cur} / ${dur}`;
+    });
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+
+    function toggleVideoAudioMute() {
+      invitationVideo.muted = !invitationVideo.muted;
+      if (invitationVideo.muted) {
+        videoVolumeIcon.setAttribute('data-lucide', 'volume-x');
+        unduckBackgroundAudio();
+      } else {
+        videoVolumeIcon.setAttribute('data-lucide', 'volume-2');
+        if (!invitationVideo.paused) {
+          duckBackgroundAudio();
+        }
+      }
+      lucide.createIcons();
+    }
+
+    function toggleFullScreenVideo() {
+      const container = document.getElementById('videoContainer');
+      if (!document.fullscreenElement) {
+        if (container.requestFullscreen) {
+          container.requestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    function openVideoLinkModal() {
+      document.getElementById('videoModal').classList.remove('hidden');
+    }
+
+    function closeVideoLinkModal() {
+      document.getElementById('videoModal').classList.add('hidden');
+    }
+
+    function applyCustomVideoLink() {
+      const input = document.getElementById('customVideoInput').value.trim();
+      if (!input) return;
+
+      if (input.includes('youtube.com') || input.includes('youtu.be') || input.includes('vimeo.com')) {
+        let embedUrl = input;
+        if (input.includes('watch?v=')) {
+          const videoId = input.split('watch?v=')[1].split('&')[0];
+          embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        } else if (input.includes('youtu.be/')) {
+          const videoId = input.split('youtu.be/')[1].split('?')[0];
+          embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        }
+        invitationVideo.pause();
+        invitationVideo.classList.add('hidden');
+        videoIframe.classList.remove('hidden');
+        videoIframe.src = embedUrl;
+        videoOverlay.classList.add('opacity-0', 'pointer-events-none');
+        duckBackgroundAudio();
+      } else {
+        videoIframe.classList.add('hidden');
+        invitationVideo.classList.remove('hidden');
+        invitationVideo.src = input;
+        invitationVideo.load();
+        invitationVideo.play();
+        videoOverlay.classList.add('opacity-0', 'pointer-events-none');
+        duckBackgroundAudio();
+      }
+      closeVideoLinkModal();
+    }
+
+    /* ==========================================================
+       5. LIVE COUNTDOWN TIMER TO SUMUHURTHAM (29-10-2026 11:03 AM IST)
+       ========================================================== */
+    const targetWeddingDate = new Date("2026-10-29T11:03:00+05:30").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetWeddingDate - now;
+
+      if (difference <= 0) {
+        document.getElementById("cd-days").innerText = "00";
+        document.getElementById("cd-hours").innerText = "00";
+        document.getElementById("cd-minutes").innerText = "00";
+        document.getElementById("cd-seconds").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById("cd-days").innerText = String(days).padStart(2, '0');
+      document.getElementById("cd-hours").innerText = String(hours).padStart(2, '0');
+      document.getElementById("cd-minutes").innerText = String(minutes).padStart(2, '0');
+      document.getElementById("cd-seconds").innerText = String(seconds).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    /* ==========================================================
+       6. AMBIENT FALLING JASMINE & MARIGOLD PETALS (CANVAS)
+       ========================================================== */
+    const canvas = document.getElementById('petal-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const petalPalette = [
+      { r: 255, g: 252, b: 245, a: 0.85 }, // Jasmine Pearl White
+      { r: 223, g: 186, b: 78, a: 0.70 },  // Champagne Gold
+      { r: 245, g: 176, b: 65, a: 0.65 },  // Marigold
+      { r: 197, g: 154, b: 47, a: 0.60 },  // Rich Gold
+      { r: 139, g: 38, b: 42, a: 0.35 }    // Sacred Rose / Kumkum
+    ];
+
+    class Petal {
+      constructor() {
+        this.reset(true);
+      }
+      reset(initial = false) {
+        this.x = Math.random() * width;
+        this.y = initial ? Math.random() * height : -20;
+        this.size = 8 + Math.random() * 8;
+        this.speedY = 0.5 + Math.random() * 0.9;
+        this.speedX = (Math.random() - 0.5) * 0.7;
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+        this.color = petalPalette[Math.floor(Math.random() * petalPalette.length)];
+        this.oscillation = Math.random() * 10;
+      }
+      update() {
+        this.y += this.speedY;
+        this.oscillation += 0.02;
+        this.x += this.speedX + Math.sin(this.oscillation) * 0.4;
+        this.rotation += this.rotationSpeed;
+
+        if (this.y > height + 20 || this.x < -20 || this.x > width + 20) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.color.a})`;
+        
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.quadraticCurveTo(this.size * 0.7, -this.size * 0.5, this.size, 0);
+        ctx.quadraticCurveTo(this.size * 0.7, this.size * 0.5, 0, 0);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    const petals = Array.from({ length: 28 }, () => new Petal());
+
+    function animatePetals() {
+      ctx.clearRect(0, 0, width, height);
+      petals.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animatePetals);
+    }
+    animatePetals();
+
+    /* ==========================================================
+       7. BLESSINGS GUESTBOOK & LOCAL STORAGE PERSISTENCE + CONFETTI
+       ========================================================== */
+    const GUESTBOOK_STORAGE_KEY = "kiranmai_rohith_blessings_gh";
+
+    function loadBlessings() {
+      const stored = localStorage.getItem(GUESTBOOK_STORAGE_KEY);
+      if (stored) {
+        try {
+          const list = JSON.parse(stored);
+          const area = document.getElementById('wishesDisplayArea');
+          list.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'p-2.5 rounded-xl bg-white shadow-sm';
+            card.innerHTML = `<strong class="text-royalGold-700">${escapeHtml(item.name)}:</strong> <p class="text-royalEspresso mt-0.5">${escapeHtml(item.msg)}</p>`;
+            area.prepend(card);
+          });
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }
+    loadBlessings();
+
+    function handleSendBlessing(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value.trim();
+      const msg = document.getElementById('guestMessage').value.trim();
+      const area = document.getElementById('wishesDisplayArea');
+
+      if (!name || !msg) return;
+
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 50,
+          spread: 60,
+          origin: { y: 0.7 },
+          colors: ['#c59a2f', '#dfba4e', '#ebcf7b', '#ffffff', '#8b262a']
+        });
+      }
+
+      const card = document.createElement('div');
+      card.className = 'p-2.5 rounded-xl bg-white shadow-sm';
+      card.innerHTML = `<strong class="text-royalGold-700">${escapeHtml(name)}:</strong> <p class="text-royalEspresso mt-0.5">${escapeHtml(msg)}</p>`;
+      area.prepend(card);
+
+      try {
+        const stored = localStorage.getItem(GUESTBOOK_STORAGE_KEY);
+        const list = stored ? JSON.parse(stored) : [];
+        list.push({ name, msg });
+        localStorage.setItem(GUESTBOOK_STORAGE_KEY, JSON.stringify(list));
+      } catch (err) {
+        console.error(err);
+      }
+
+      document.getElementById('guestName').value = '';
+      document.getElementById('guestMessage').value = '';
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    /* ==========================================================
+       8. ADD TO CALENDAR (.ICS FILE EXPORT)
+       ========================================================== */
+    function downloadCalendarInvite(type) {
+      let title, desc, loc, start, end;
+
+      if (type === 'wedding') {
+        title = "Wedding Sumuhurtham: Kiranmai Reddy & Rohith Kumar Reddy";
+        desc = "Auspicious Sumuhurtham (Rohini Nakshatram - Dhanussu Lagnam). Daughter of Sri Avuluri Srinivasa Reddy & Smt. Avuluri Nagamani weds Son of Late Sri Karne Narayana Reddy & Smt. Dhanalaxmi.";
+        loc = "SwarnaVedika Function Hall, Huzurnagar, Suryapet District, Telangana";
+        start = "20261029T053300Z"; // 11:03 AM IST in UTC (05:33 UTC)
+        end = "20261029T093000Z";
+      } else {
+        title = "Wedding Reception & Lunch: Kiranmai & Rohith";
+        desc = "Celebratory Wedding Reception and Lunch. Hosted by Smt. & Sri Avuluri Nagamani - Srinivasa Reddy.";
+        loc = "Veerabhadra Function Hall, Kunavaram Road, Bhadrachalam, Telangana";
+        start = "20261101T053000Z"; // 11:00 AM IST in UTC
+        end = "20261101T103000Z";
+      }
+
+      const ics = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Kiranmai Rohith Wedding//EN",
+        "BEGIN:VEVENT",
+        `SUMMARY:${title}`,
+        `DESCRIPTION:${desc}`,
+        `LOCATION:${loc}`,
+        `DTSTART:${start}`,
+        `DTEND:${end}`,
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute('download', `${type}-kiranmai-rohith.ics`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
